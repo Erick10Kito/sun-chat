@@ -9,9 +9,6 @@ export function Home() {
   return (
     <div>
       <h1>Welcome to the Home Page</h1>
-      <button>
-        <Link to="/mensagens">Go to the next page</Link>
-      </button>
     </div>
   );
 }

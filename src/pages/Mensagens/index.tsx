@@ -6,7 +6,7 @@ export function Mensagens() {
     <div>
       {ApiMensagens.map((ApiMensagem) => {
         return (
-          <Link to={`/mensagens/${ApiMensagem.id}`} key={ApiMensagem.id}>
+          <Link to={`/home/mensagens/${ApiMensagem.id}`} key={ApiMensagem.id}>
             <h1>{ApiMensagem.title}</h1>
           </Link>
         );
