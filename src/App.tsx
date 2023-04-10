@@ -1,12 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
+import { MyContextProvider } from "./contexts/loginContext";
 
 import Routes from "./routes";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <MyContextProvider>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </MyContextProvider>
   );
 }
 

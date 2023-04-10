@@ -1,20 +1,13 @@
 import { SignIn } from "phosphor-react";
 import React, { ChangeEvent, FormEvent, SetStateAction, useState } from "react";
 import { Link } from "react-router-dom";
+import useLocalStorageState from "use-local-storage-state";
+import { MyContext, useMyContext } from "../../contexts/loginContext";
 import { names } from "../../services/names";
 
 export function LoginForm() {
-  const [isActive, setIsActive] = useState(false);
+  const { handleChangeTextLogin, isActive } = useMyContext();
 
-  function handleChangeTextLogin(event: React.ChangeEvent<HTMLInputElement>) {
-    const filterName = names.filter((name) => name.nome === event.target.value);
-
-    if (filterName.length > 0) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }
   return (
     <div>
       <div>
