@@ -9,45 +9,47 @@ export function LoginForm() {
   const { handleChangeTextLogin, isActive } = useMyContext();
 
   return (
-    <div>
+    <div className="w-full px-5 flex justify-center bg-bgForm">
       <div>
-        <p className="text-2xl mb-6 font-Quintessential">Nome Completo:</p>
-      </div>
-      <div className="mb-14">
-        <input
-          type="text"
-          onChange={handleChangeTextLogin}
-          className="h-12 shadow-lg rounded bg-bgInput px-2 text-2xl"
-        />
-      </div>
+        <div>
+          <p className="text-2xl mb-6 font-Quintessential">Nome Completo:</p>
+        </div>
+        <div className="mb-14">
+          <input
+            type="text"
+            onChange={handleChangeTextLogin}
+            className="h-12 shadow-lg rounded bg-bgInput px-2 text-2xl"
+          />
+        </div>
 
-      {!isActive ? (
-        <button
-          disabled
-          className="disabled:cursor-not-allowed w-full"
-          title="Digite um nome válido"
-        >
-          <div className="flex">
-            <div className="py-2 px-3 bg-bgButtonLogin w-full flex justify-center items-center h-14 rounded-tl-xl rounded-bl-xl text-2xl font-Quintessential">
-              Entrar
+        {!isActive ? (
+          <button
+            disabled
+            className="disabled:cursor-not-allowed w-full"
+            title="Digite um nome válido"
+          >
+            <div className="flex">
+              <div className="py-2 px-3 bg-bgButtonLogin w-full flex justify-center items-center h-14 rounded-tl-xl rounded-bl-xl text-2xl font-Quintessential">
+                Entrar
+              </div>
+              <div className="py-2 px-3 bg-bgIconLogin w-[30%] flex justify-center items-center h-14 rounded-tr-xl rounded-br-xl">
+                <SignIn size={32} />
+              </div>
             </div>
-            <div className="py-2 px-3 bg-bgIconLogin w-[30%] flex justify-center items-center h-14 rounded-tr-xl rounded-br-xl">
-              <SignIn size={32} />
+          </button>
+        ) : (
+          <Link to="/home">
+            <div className="flex">
+              <div className="py-2 px-3 bg-bgButtonLogin w-full flex justify-center items-center h-14 rounded-tl-xl rounded-bl-xl text-2xl font-Quintessential">
+                Entrar
+              </div>
+              <div className="py-2 px-3 bg-bgIconLogin w-[30%] flex justify-center items-center h-14 rounded-tr-xl rounded-br-xl">
+                <SignIn size={32} />
+              </div>
             </div>
-          </div>
-        </button>
-      ) : (
-        <Link to="/home">
-          <div className="flex">
-            <div className="py-2 px-3 bg-bgButtonLogin w-full flex justify-center items-center h-14 rounded-tl-xl rounded-bl-xl text-2xl font-Quintessential">
-              Entrar
-            </div>
-            <div className="py-2 px-3 bg-bgIconLogin w-[30%] flex justify-center items-center h-14 rounded-tr-xl rounded-br-xl">
-              <SignIn size={32} />
-            </div>
-          </div>
-        </Link>
-      )}
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
