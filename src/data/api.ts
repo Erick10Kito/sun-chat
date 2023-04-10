@@ -1,3 +1,12 @@
+export interface IMensagem {
+  mensagemId: string;
+  mensagemTitle: string;
+  mensagemContent: string;
+  mensagemAuthor: string;
+  sendDate: Date;
+  isRead: boolean;
+}
+
 export const Dados = [
   {
     grupoId: "1",
@@ -17,6 +26,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: false,
       },
       {
         mensagemId: "3",
@@ -24,6 +34,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: false,
       },
       {
         mensagemId: "4",
@@ -31,6 +42,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: true,
       },
       {
         mensagemId: "5",
@@ -38,6 +50,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: true,
       },
     ],
   },
@@ -59,6 +72,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: true,
       },
       {
         mensagemId: "65454",
@@ -66,6 +80,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: false,
       },
       {
         mensagemId: "548742",
@@ -73,6 +88,7 @@ export const Dados = [
         mensagemContent: "Meu conteudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: false,
       },
       {
         mensagemId: "56656",
@@ -80,6 +96,7 @@ export const Dados = [
         mensagemContent: "Meu contdasdasfudo",
         mensagemAuthor: "Erick",
         sendDate: new Date(),
+        isRead: true,
       },
     ],
   },

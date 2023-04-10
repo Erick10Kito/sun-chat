@@ -15,12 +15,12 @@ export function Grupo() {
     <div className="">
       <div className="flex">
         <div>
-          <SidebarGroups slug={id} />
+          <SidebarGroups slug={id} mensagens={MensagensGrupo} />
         </div>
         <div className="w-full">
           <div className="mx-8 mt-5 flex flex-col gap-5">
             {MensagensGrupo?.map((mensagem) => (
-              <Mensagem mensagem={mensagem} />
+              <Mensagem mensagem={mensagem} key={mensagem.mensagemId} />
             ))}
           </div>
         </div>

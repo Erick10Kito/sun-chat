@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
-import { Dados } from "../../data/api";
+import { Dados, IMensagem } from "../../data/api";
+interface IGroupsButtonProps {
+  slug?: string;
+  mensagens?: IMensagem[];
+}
 
-export function GroupsButton({ slug }: any) {
+export function GroupsButton({ slug, mensagens }: IGroupsButtonProps) {
+  const MensagensNaoLidas = mensagens?.filter(
+    (mensagem) => mensagem.isRead === false
+  );
   return (
     <div className="">
       {Dados.map((grupo) => (

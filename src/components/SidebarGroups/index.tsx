@@ -3,13 +3,14 @@ import { GroupsButton } from "../GroupsButton";
 import Logo from "../../assets/logoBgWhite.png";
 import { Link } from "react-router-dom";
 import { ArrowElbowDownLeft } from "phosphor-react";
+import { IMensagem } from "../../data/api";
 
-export function SidebarGroups({ slug }: any) {
-  const [showGroup, setShowGroup] = useState(false);
+interface ISidebarGroupsProps {
+  slug?: string;
+  mensagens?: IMensagem[];
+}
 
-  function handleShowGroup() {
-    setShowGroup(!showGroup);
-  }
+export function SidebarGroups({ slug, mensagens }: ISidebarGroupsProps) {
   return (
     <div className="w-[300px] bg-white shadow-2xl h-screen py-5 flex flex-col">
       <div>
@@ -20,7 +21,7 @@ export function SidebarGroups({ slug }: any) {
         </div>
         <div className="">
           <div>
-            <GroupsButton slug={slug} />
+            <GroupsButton slug={slug} mensagens={mensagens} />
           </div>
         </div>
       </div>
