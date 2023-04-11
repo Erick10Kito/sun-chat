@@ -4,6 +4,7 @@ import { names } from "../services/names";
 interface MyContextType {
   handleChangeTextLogin: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isActive: boolean;
+  handleTurnFalseIsActive: () => void;
 }
 
 export const useMyContext = () => useContext(MyContext);
@@ -26,8 +27,14 @@ export const MyContextProvider = ({ children }: any) => {
       setIsActive(false);
     }
   }
+
+  function handleTurnFalseIsActive(): void {
+    setIsActive(false);
+  }
   return (
-    <MyContext.Provider value={{ handleChangeTextLogin, isActive }}>
+    <MyContext.Provider
+      value={{ handleChangeTextLogin, isActive, handleTurnFalseIsActive }}
+    >
       {children}
     </MyContext.Provider>
   );

@@ -12,13 +12,13 @@ export function Grupo() {
   const MensagensGrupo = filteredGrupos?.mensagens;
 
   return (
-    <div className="">
+    <div className="pt">
       <div className="flex">
         <div>
           <SidebarGroups slug={id} mensagens={MensagensGrupo} />
         </div>
         <div className="w-full">
-          <div className="mx-8 mt-5 flex flex-col gap-5">
+          <div className="mx-8 mt-5 flex flex-col gap-5 max-[768px]:mt-10 max-[768px]:mx-4">
             {MensagensGrupo?.map((mensagem) => (
               <Mensagem mensagem={mensagem} key={mensagem.mensagemId} />
             ))}

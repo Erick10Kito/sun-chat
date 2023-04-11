@@ -9,16 +9,21 @@ export function LoginForm() {
   const { handleChangeTextLogin, isActive } = useMyContext();
 
   return (
-    <div className="w-full px-5 flex justify-center bg-bgForm">
+    <div className="w-full px-5 flex justify-center flex-col bg-bgForm py-8 rounded-t-xl ">
+      <div>
+        <h1 className="text-center text-6xl mb-14 font-Quintessential">
+          Login
+        </h1>
+      </div>
       <div>
         <div>
           <p className="text-2xl mb-6 font-Quintessential">Nome Completo:</p>
         </div>
-        <div className="mb-14">
+        <div className="mb-14 w-full">
           <input
             type="text"
             onChange={handleChangeTextLogin}
-            className="h-12 shadow-lg rounded bg-bgInput px-2 text-2xl"
+            className="h-12 shadow-lg rounded bg-bgInput px-2 text-2xl w-full"
           />
         </div>
 
